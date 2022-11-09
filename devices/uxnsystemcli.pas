@@ -1,4 +1,4 @@
-unit uxnSystem;
+unit uxnSystemCLI;
 
 {$mode ObjFPC}{$H+}
 
@@ -49,7 +49,7 @@ begin
   $2: p^.wst.ptr := d.dat[port];
   $3: p^.rst.ptr := d.dat[port];
   $e: system_inspect(p^);
-  //else system_deo_special(d, port);
+  else WriteLn('system_deo_special');
   end;
 end;
 

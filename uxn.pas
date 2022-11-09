@@ -17,6 +17,8 @@ const
                                  'Execution timeout');
 
 type
+  TUXNMemoryArray = array [0..65535] of byte;
+
   TStack = record
     ptr: integer;
     dat: array [0..255] of byte;
@@ -28,17 +30,18 @@ type
     dei: Pointer;
     deo: Pointer;
   end;
+  PDevice = ^TDevice;
 
-  TFuncDevice = function(d: TDevice; port: byte): byte;
+  TFuncDevice = function(var d: TDevice; port: byte): byte;
 
   TUxnCPU = record
-    ram: array [0..65535] of byte;
+    ram: TUXNMemoryArray;
     wst, rst: TStack;
     dev: array [0..15] of TDevice;
   end;
 
 procedure DEVPEEK16(d: TDevice; out o: word; x: word);
-procedure DEVPOKE16(d: TDevice; x, y: word);
+procedure DEVPOKE16(var d: TDevice; x, y: word);
 function GETVECTOR(d: TDevice): integer;
 
 procedure PUSH8(u: TUxnCPU; var s: Pointer; x: integer; var errcode: integer);
@@ -59,7 +62,7 @@ function uxn_boot(VAR u: TUxnCPU): boolean;
 function uxn_eval(VAR u: TUxnCPU; pc: integer): boolean;
 function uxn_interrupt(): boolean;
 function uxn_halt(VAR u: TUxnCPU; error, addr: integer): boolean;
-function uxn_port(VAR u: TUxnCPU; id: integer; deifn, deofn: TFuncDevice): TDevice;
+function uxn_port(VAR u: TUxnCPU; id: integer; deifn, deofn: TFuncDevice): PDevice;
 
 implementation
 
@@ -71,7 +74,7 @@ begin
   o := d.dat[x] shl 8 + d.dat[x+1];
 end;
 
-procedure DEVPOKE16(d: TDevice; x, y: word);
+procedure DEVPOKE16(var d: TDevice; x, y: word);
 begin
   d.dat[x] := y shr 8;
   d.dat[x+1] := y and $ff;
@@ -286,10 +289,8 @@ begin
     $0b: { LTH } begin POP(u, src, sp, a, bs, errcode); POP(u, src, sp, b, bs, errcode); if b < a then c := 1 else c := 0; PUSH8(u, src, c, errcode); end;
     $0c: { JMP } begin POP(u, src, sp, a, bs, errcode); WARP(pc, a, bs); end;
     $0d: { JCN } begin POP(u, src, sp, a, bs, errcode); POP8(u, src, sp, b, errcode); if b <> 0 then WARP(pc, a, bs); end;
-    $0e: { JSR } begin
-      POP(u, src, sp, a, bs, errcode);
-      PUSH16(u, dst, pc, errcode);
-      WARP(pc, a, bs); end;
+    $0e: { JSR } begin POP(u, src, sp, a, bs, errcode);
+      PUSH16(u, dst, pc, errcode); WARP(pc, a, bs); end;
     $0f: { STH } begin POP(u, src, sp, a, bs, errcode); PUSH(u, dst, a, bs, errcode); end;
 
     { Memory }
@@ -328,15 +329,15 @@ begin
   uxn_halt := false;
 end;
 
-function uxn_port(VAR u: TUxnCPU; id: integer; deifn, deofn: TFuncDevice): TDevice;
+function uxn_port(VAR u: TUxnCPU; id: integer; deifn, deofn: TFuncDevice): PDevice;
 var
-  d: ^TDevice;
+  d: PDevice;
 begin
   d := @u.dev[id];
   d^.u := @u;
   d^.dei := deifn;
   d^.deo := deofn;
-  uxn_port := d^;
+  uxn_port := d;
 end;
 
 end.

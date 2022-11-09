@@ -24,13 +24,13 @@ type
 
 type
   TIntegerArray = array of integer;
-  TByteArray = array [0..65535] of byte;
+  //TByteArray = array [0..65535] of byte;
 
 var
   uxn_file: array [0..POLYFILEY-1] of TUxnFile;
 
-function file_dei(d: TDevice; port: byte): byte;
-function file_deo(d: TDevice; port: byte): byte;
+function file_dei(var d: TDevice; port: byte): byte;
+function file_deo(var d: TDevice; port: byte): byte;
 function load_rom(var u: TUxnCPU; filename: string): boolean;
 
 implementation
@@ -131,7 +131,7 @@ begin
   Exit(@uxn_file[ShortInt(p)]);
 end;
 
-function file_dei(d: TDevice; port: byte): byte;
+function file_dei(var d: TDevice; port: byte): byte;
 var
   c: PUxnFile;
   dp: ^TByteArray;
@@ -143,7 +143,7 @@ begin
   Exit(d.dat[port]);
 end;
 
-function file_deo(d: TDevice; port: byte): byte;
+function file_deo(var d: TDevice; port: byte): byte;
 var
   addr, len, res: word;
   c: PUxnFile;
@@ -191,7 +191,7 @@ function load_rom(var u: TUxnCPU; filename: string): boolean;
 var
   p: PUxnFile;
   res: integer;
-  dp: ^TByteArray;
+  dp: ^TUXNMemoryArray;
 begin
   p := @uxn_file;
   res := file_init(p, filename, Length(filename) + 1);

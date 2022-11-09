@@ -8,7 +8,7 @@ uses
   {$ENDIF}
   Classes, SysUtils, CustApp,
   { you can add units after this }
-  uxn, uxnFile, uxnSystem;
+  uxn, uxnFile, uxnSystemCLI;
 
 type
 
@@ -29,11 +29,6 @@ function ErrorMessage(msg, errorStr: String): Integer;
 begin
   WriteLn(Format('%s: %s', [msg, errorStr]));
   ErrorMessage := 0;
-end;
-
-function system_deo_special(d: TDevice; port: byte): byte;
-begin
-  WriteLn('system_deo_special');
 end;
 
 function console_deo(d: TDevice; port: byte): byte;
@@ -98,8 +93,8 @@ begin
   if ParamCount < 1 then Halt(ErrorMessage('Usage', 'luxncli game.rom'));
 
   // quick check parameters
-  ErrorMsg:=CheckOptions('h', 'help');
-  if ErrorMsg<>'' then begin
+  ErrorMsg := CheckOptions('h', 'help');
+  if ErrorMsg <> '' then begin
     ShowException(Exception.Create(ErrorMsg));
     Terminate;
     Exit;
