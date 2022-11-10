@@ -9,8 +9,8 @@
         <Filename Value="Lazaruxnemu.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="16" Y="26"/>
-        <UsageCount Value="132"/>
+        <CursorPos Y="30"/>
+        <UsageCount Value="133"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -19,9 +19,10 @@
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="61"/>
-        <CursorPos X="26" Y="72"/>
-        <UsageCount Value="132"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="119"/>
+        <CursorPos Y="134"/>
+        <UsageCount Value="133"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -29,11 +30,10 @@
         <Filename Value="devices\uxnscreen.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uxnScreen"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="108"/>
-        <CursorPos Y="130"/>
-        <UsageCount Value="132"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="229"/>
+        <CursorPos Y="253"/>
+        <UsageCount Value="133"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -46,19 +46,19 @@
       </Unit>
       <Unit>
         <Filename Value="uxn.pas"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="39"/>
-        <CursorPos X="30" Y="50"/>
-        <UsageCount Value="66"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="165"/>
+        <CursorPos Y="176"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="devices\uxnfile.pas"/>
         <UnitName Value="uxnFile"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="24"/>
         <CursorPos X="22" Y="32"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -66,130 +66,138 @@
         <EditorIndex Value="1"/>
         <TopLine Value="29"/>
         <CursorPos X="44" Y="56"/>
-        <UsageCount Value="31"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="1352"/>
+        <CursorPos Y="1371"/>
+        <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="246" TopLine="228"/>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2176" TopLine="2162"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="193" Column="25" TopLine="185"/>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2177" TopLine="2162"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="93" TopLine="77"/>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2173" TopLine="2162"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="246" TopLine="228"/>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2179" TopLine="2162"/>
       </Position>
       <Position>
-        <Filename Value="uxn.pas"/>
-        <Caret Line="35" Column="26" TopLine="19"/>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2184" TopLine="2162"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2186" TopLine="2162"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2188" TopLine="2162"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2189" TopLine="2163"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2190" TopLine="2164"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2191" TopLine="2165"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2192" TopLine="2166"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2206" TopLine="2190"/>
+      </Position>
+      <Position>
+        <Filename Value="Lazaruxnemu.lpr"/>
+        <Caret Line="29"/>
+      </Position>
+      <Position>
+        <Filename Value="Lazaruxnemu.lpr"/>
+        <Caret Line="30"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="1369" TopLine="1352"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <Caret Line="1370" TopLine="1352"/>
       </Position>
       <Position>
         <Filename Value="luxnemu.pas"/>
-        <Caret Line="60" Column="22" TopLine="58"/>
-      </Position>
-      <Position>
-        <Filename Value="devices\uxnsystememu.pas"/>
-        <Caret Line="11" Column="21"/>
-      </Position>
-      <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="192" Column="24" TopLine="178"/>
+        <Caret Line="192" Column="4" TopLine="167"/>
       </Position>
       <Position>
         <Filename Value="luxnemu.pas"/>
-        <Caret Line="86" Column="56" TopLine="70"/>
-      </Position>
-      <Position>
-        <Filename Value="uxn.pas"/>
-        <Caret Line="59" Column="74" TopLine="39"/>
-      </Position>
-      <Position>
-        <Filename Value="uxn.pas"/>
-        <Caret Line="50" Column="30" TopLine="39"/>
+        <Caret Line="137" TopLine="122"/>
       </Position>
       <Position>
         <Filename Value="luxnemu.pas"/>
-        <Caret Line="73" Column="20" TopLine="61"/>
+        <Caret Line="109" TopLine="92"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="117" Column="25" TopLine="106"/>
+        <Filename Value="luxnemu.pas"/>
+        <Caret Line="138" TopLine="123"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="124" Column="48" TopLine="109"/>
+        <Filename Value="Lazaruxnemu.lpr"/>
+        <Caret Line="28"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="120" Column="14" TopLine="108"/>
+        <Filename Value="Lazaruxnemu.lpr"/>
+        <Caret Line="29"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="127" TopLine="108"/>
+        <Filename Value="Lazaruxnemu.lpr"/>
+        <Caret Line="30"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="122" TopLine="108"/>
+        <Filename Value="luxnemu.pas"/>
+        <Caret Line="41" Column="23" TopLine="22"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="123" TopLine="108"/>
+        <Filename Value="luxnemu.pas"/>
+        <Caret Line="137" TopLine="122"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="126" Column="18" TopLine="108"/>
+        <Filename Value="luxnemu.pas"/>
+        <Caret Line="109" TopLine="92"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="122" TopLine="108"/>
+        <Filename Value="luxnemu.pas"/>
+        <Caret Line="138" TopLine="123"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="123" TopLine="108"/>
+        <Filename Value="Lazaruxnemu.lpr"/>
+        <Caret Line="28"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="124" TopLine="108"/>
+        <Filename Value="Lazaruxnemu.lpr"/>
+        <Caret Line="29"/>
       </Position>
       <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="125" TopLine="108"/>
-      </Position>
-      <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="126" TopLine="108"/>
-      </Position>
-      <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="124" Column="31" TopLine="108"/>
-      </Position>
-      <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="122" TopLine="108"/>
-      </Position>
-      <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="123" TopLine="108"/>
-      </Position>
-      <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="124" TopLine="108"/>
-      </Position>
-      <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="125" TopLine="108"/>
-      </Position>
-      <Position>
-        <Filename Value="devices\uxnscreen.pas"/>
-        <Caret Line="126" TopLine="108"/>
+        <Filename Value="luxnemu.pas"/>
+        <Caret Line="168" Column="16" TopLine="158"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -209,8 +217,8 @@
       </List>
       <List Name="CommandLineParameters" Count="7">
         <Item1 Value="amiga.rom"/>
-        <Item2 Value="polycat.rom"/>
-        <Item3 Value="screen.rom"/>
+        <Item2 Value="screen.rom"/>
+        <Item3 Value="polycat.rom"/>
         <Item4 Value="screen_simple.rom"/>
         <Item5 Value="screen_2.rom"/>
         <Item6 Value="calc.rom"/>
@@ -226,13 +234,6 @@
         <WatchKind Value="wpkWrite"/>
         <Expression Value="color &lt;> 1"/>
       </Item>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="luxnemu.pas"/>
-        <Line Value="157"/>
-      </Item>
     </BreakPoints>
     <Watches>
       <Item>
@@ -246,6 +247,12 @@
       </Item>
       <Item>
         <Expression Value="d.dat"/>
+      </Item>
+      <Item>
+        <Expression Value="u.dev[2]"/>
+      </Item>
+      <Item>
+        <Expression Value="x"/>
       </Item>
     </Watches>
   </Debugging>

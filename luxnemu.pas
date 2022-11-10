@@ -20,6 +20,7 @@ type
   private
 
   public
+    var u: TUxnCPU;
 
   end;
 
@@ -36,8 +37,8 @@ var
 
   devScreen: PDevice;
 
-procedure uxn_init(u: TUxnCPU);
-procedure run_uxn(u: TUxnCPU);
+procedure uxn_init(var u: TUxnCPU);
+procedure run_uxn(var u: TUxnCPU);
 
 implementation
 
@@ -102,7 +103,7 @@ begin
   start := true;
 end;
 
-procedure uxn_init(u: TUxnCPU);
+procedure uxn_init(var u: TUxnCPU);
 begin
   if ParamCount < 1 then Halt(ErrorMessage('Usage', 'luxnemu game.rom'));
 
@@ -133,7 +134,7 @@ begin
 end;
 
 
-procedure run_uxn(u: TUxnCPU);
+procedure run_uxn(var u: TUxnCPU);
 //var
   //c: char;
 begin
@@ -154,15 +155,6 @@ var
 begin
   zoom_factor := 1;
 
-  //screen_resize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
-  //Form1.Width := DEFAULT_WIDTH;
-  //Form1.Height := DEFAULT_HEIGHT;
-
-  //set_zoom();
-
-  { Run loop waiting for additional vectors }
-  //run_uxn(u);
-
   TimerScreen.Enabled := true;
 
 end;
@@ -173,31 +165,9 @@ var
   x, y: Integer;
 
 begin
+  {
   Form1.Width := uxn_screen.width;
   Form1.Height := uxn_screen.height;
-  {
-  for x := 0 to uxn_screen.width-1 do begin
-    for y := 0 to uxn_screen.height-1 do begin
-      uxn_screen.img.Colors[x, y] := TColorToFPColor(RGBToColor(x, y, 32));
-    end;
-  end;
-  }
-
-  {
-  // Background
-  for x := 0 to Width-1 do begin
-    for y := 0 to Height-1 do begin
-      uxn_screen.img.Colors[x, y] := TColorToFPColor(RGBToColor(x, y, 32));
-    end;
-  end;
-  }
-     {
-  // Foreground
-  for x := 32 to 64 do begin
-    for y := 64 to 128 do begin
-      uxn_screen.fg.img.Colors[x, y] := TColorToFPColor(RGBToColor(64, x, y));
-    end;
-  end;    }
 
   screen_redraw(uxn_screen, uxn_screen.img);
 
@@ -206,6 +176,7 @@ begin
   // Draw unified image
   b.LoadFromIntfImage(uxn_screen.img);
   Canvas.Draw(0, 0, b);
+  }
 
 end;
 
@@ -215,7 +186,8 @@ var
   x, y: Integer;
 begin
   // TODO: Add Screen Vector to pending vector queue
-  //TForm1.Invalidate;
+
+  uxn_eval(Form1.u, GETVECTOR(devscreen^));
 
   Form1.Width := uxn_screen.width;
   Form1.Height := uxn_screen.height;
@@ -227,6 +199,8 @@ begin
   // Draw unified image
   b.LoadFromIntfImage(uxn_screen.img);
   Canvas.Draw(0, 0, b);
+
+  b.Free;
 end;
 
 

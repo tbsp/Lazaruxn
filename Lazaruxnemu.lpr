@@ -26,6 +26,7 @@ begin
   uxn_init(u);
 
   Application.CreateForm(TForm1, Form1);
+  Form1.u := u;
   Application.Run;
 end.
 
