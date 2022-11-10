@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 1412
+  Left = 1625
   Height = 240
-  Top = 614
+  Top = 738
   Width = 320
   BorderStyle = bsDialog
   Caption = 'luxnemu'

@@ -116,16 +116,17 @@ end;
 
 procedure screen_palette(d: TDevice);
 var
-  i: integer;
+  i, r, g, b: byte;
   shift: byte;
 begin
   shift := 4;
-  //for i := 0 to 3 do begin
-  //end;
-  uxn_screen.palette[0] := TColorToFPColor(RGBToColor(255, 255, 255));
-  uxn_screen.palette[1] := TColorToFPColor(RGBToColor(0, 0, 0));
-  uxn_screen.palette[2] := TColorToFPColor(RGBToColor(119, 238, 204));
-  uxn_screen.palette[3] := TColorToFPColor(RGBToColor(255, 0, 0));
+  for i := 0 to 3 do begin
+    r := (d.dat[$8 + (i shr 1)] shr shift) and $f;
+    g := (d.dat[$a + (i shr 1)] shr shift) and $f;
+    b := (d.dat[$c + (i shr 1)] shr shift) and $f;
+    uxn_screen.palette[i] := TColorToFPColor(RGBToColor(r or (r shl 4), g or (g shl 4), b or (b shl 4)));
+    shift := shift xor 4;
+  end;
 
 end;
 

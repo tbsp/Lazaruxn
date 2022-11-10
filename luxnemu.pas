@@ -70,7 +70,7 @@ end;
 
 function nil_deo(var d: TDevice; port: byte): byte;
 begin
-  WriteLn(d.dat[port]);
+  //WriteLn('nil_deo');
   Exit(0);
 end;
 
